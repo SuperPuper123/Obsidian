@@ -1,0 +1,211 @@
+@charset "UTF-8"; 
+body {
+/* Colors */
+
+  --yellow: #e5b567;
+
+  --strong-color: var(--yellow);
+}
+
+/* Bold font */
+body:not(.default-font-color) strong,
+body:not(.default-font-color) .cm-strong {
+  color: var(--strong-color);
+}
+  
+/*
+ * Callouts
+*/
+body {
+    --callout-padding: 0;
+    --callout-title-padding: var(--size-4-2) var(--size-4-2) var(--size-4-2) var(--size-4-3);
+    --callout-content-padding: 0 var(--size-4-2) var(--size-4-2) var(--size-4-3);
+    --callout-radius: 0px;
+}
+
+/* remove leading and trailing padding of callout content paragraphs */
+.callout-content > p:first-child {
+    margin-top: 0px;
+}
+.callout-content > p:last-child {
+    margin-bottom: 0px;
+}
+
+.callout {
+    border-left: 4px solid rgba(var(--callout-color), 1.0);
+}
+
+/* make quotes look like callouts too */
+body {
+    --blockquote-border-thickness: 4px;
+}
+
+/* make the danger callout better */
+.callout[data-callout="danger"] {
+    --callout-icon: alert-octagon;
+    --callout-color: 252, 110, 104;
+
+}
+
+/* colours */
+.callout[data-callout="note"] {
+    --callout-color: 94, 129, 172;
+}
+
+.callout[data-callout="abstract"],
+.callout[data-callout="summary"],
+.callout[data-callout="tldr"] {
+    --callout-color: 129, 161, 193;
+}
+
+.callout[data-callout="info"],
+.callout[data-callout="todo"],
+.callout[data-callout="tip"],
+.callout[data-callout="hint"],
+.callout[data-callout="important"] {
+    --callout-color: 136, 192, 208;
+}
+
+.callout[data-callout="success"],
+.callout[data-callout="check"],
+.callout[data-callout="done"],
+.callout[data-callout="question"],
+.callout[data-callout="help"],
+.callout[data-callout="faq"] {
+    --callout-color: 163, 190, 140;
+}
+
+.theme-light .callout[data-callout="attention"],
+.theme-light .callout[data-callout="caution"],
+.theme-light .callout[data-callout="warning"] {
+    --callout-color: 228, 184, 140;
+}
+
+.theme-dark .callout[data-callout="attention"],
+.theme-dark .callout[data-callout="caution"],
+.theme-dark .callout[data-callout="warning"] {
+    --callout-color: 235, 203, 139;
+}
+
+.callout[data-callout="failure"],
+.callout[data-callout="fail"],
+.callout[data-callout="missing"] {
+    --callout-color: 208, 135, 112;
+}
+
+.callout[data-callout="error"],
+.callout[data-callout="bug"] {
+    --callout-color: 191, 97, 106;
+}
+
+.callout[data-callout="example"] {
+    --callout-color: 180, 142, 173;
+}
+
+/*
+ * Highlighters
+ * Original by soggymuse, modified by Pipe
+*/
+/* removes the default css */
+mark,
+.markdown-rendered mark,
+.cm-s-obsidian span.cm-highlight {
+    color: inherit;
+    background: none;
+    border-radius: 4px;
+    border-bottom: 3px solid;
+    border-bottom-color: var(--color-yellow);
+}
+
+/*Add highlighter's label before highlighted text*/
+mark::before,
+.cm-s-obsidian span.cm-highlight::before {
+    padding: 0 5px;
+    text-transform: lowercase;
+    font-style: italic;
+    font-family: Palatino;
+}
+
+/*Red highlighter (edit)*/
+mark.edit { border-bottom-color: var(--color-red); }
+mark.edit::before {
+    color: var(--color-red);
+    content: "Edit:";
+}
+
+/*Orange highlighter (unfinished)*/
+mark.unfinished { border-bottom-color: var(--color-orange); }
+mark.unfinished::before {
+    color: var(--color-orange);
+    content: "Unfinished:";
+}
+
+/*Pink highlighter (verify)*/
+mark.verify { border-bottom-color: var(--color-purple); }
+mark.verify::before {
+    color: var(--color-purple);
+    content: "Verify:";
+}
+
+/* Green highlighter (important)*/
+mark.important { border-bottom-color: var(--color-green); }
+mark.important::before {
+    color: var(--color-green);
+    content: "Important:";
+}
+
+/*
+ * Text colours using mark
+*/
+/*Red text*/
+mark.red { 
+    color: var(--color-red);
+    border-bottom: 0px;
+}
+/*Blue text*/
+mark.blue { 
+    color: var(--color-blue);
+    border-bottom: 0px;
+}
+/*green text*/
+mark.green { 
+    color: var(--color-green);
+    border-bottom: 0px;
+}
+/*purple text*/
+mark.purple { 
+    color: var(--color-purple);
+    border-bottom: 0px;
+}
+
+/*
+ * Calendar plugin
+ *
+ * obsidian-calendar-plugin
+ * https://github.com/liamcain/obsidian-calendar-plugin
+/*
+
+/* colors */
+#calendar-container {
+  --color-dot: var(--color-accent-2);
+  --color-arrow: var(--color-salmon);
+  --color-background-weekend: var(--background-primary);
+  --color-text-weeknum: var(--color-yellow);
+}
+#calendar-container .year {
+    color: var(--color-cyan);
+}
+
+/* padding fixes for calendar */
+.workspace-leaf-content .view-content {
+    padding: var(--size-2-2);
+}
+#calendar-container,
+#calendar-container .day,
+#calendar-container .week-num {
+  padding: 0;
+}
+#calendar-container .nav {
+    margin: .2em 0 .6em;
+}
+
