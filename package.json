@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "rm -rf graph-data.json && next dev",
-    "build": "CI= npm run build",
+    "build": "command = npm run build",
     "start": "next start",
     "deploy": "yarn build && git add . && git commit -m '...' && git push"
   },
